@@ -16,7 +16,7 @@ app = FastAPI()
 fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
 
 # 查询参数类型转换
-@app.get("/items/{item_id}")
+@app.get("/users/{user_id}/items/{item_id}")
 async def read_item(item_id: str, q: Union[str, None] = None, short: bool = False):
     item = {"item_id": item_id}
     if q:
