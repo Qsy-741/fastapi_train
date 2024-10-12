@@ -1,9 +1,9 @@
 # 不是这怎么这么难用啊
 # taskkill /PID 17308 /F
 from enum import Enum
-from typing import Union
+from typing import Union, Annotated
 from pydantic import BaseModel
-from fastapi import FastAPI
+from fastapi import FastAPI, Query, Path
 
 class ModelName(str, Enum):
     alexnet = "alexnet"
@@ -20,13 +20,58 @@ class Item(BaseModel):
 
 app = FastAPI()
 
-fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
+@app.get("/items/{item_id}")
+async def read_item(
+        item_id: Annotated[int, Path(title="The ID of the item to get")],
+        q: Annotated[Union[str, None], Query(alias="item-query")] = None,
+):
+    results = {"item_id": item_id}
+    if q:
+        results.update({"q": q})
+    return results
+
+# @app.get("/items/")
+# async def read_item(q: Annotated[Union[str, None], Query(
+#     alias="item-query",
+#     title="Query String",
+#     description="Query for the items",
+#     min_length=3,
+#     include_in_schema=False
+#     )] = None,
+# ):
+#     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
+#     if q:
+#         results.update({"q": q})
+#     return results
+
+# @app.get("/items/")
+# async def read_item(q: Annotated[Union[list[str], None], Query()] = ...):
+#     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
+#     if q:
+#         results.update({"q": q})
+#     return results
+
+# @app.get("/items/")
+# async def read_items(q: Annotated[Union[str, None], Query(min_length=2, max_length=5)] = None):
+#     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
+#     if q:
+#         results.update({"q": q})
+#     return results
+
+# fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
+#
+# @app.put("/items/{item_id}")
+# async def update_item(item_id: int, item: Item):
+#     return {"item_id": item_id, **item.dict()}
 
 # 请求体
-@app.post("/items/")
-async def create_item(item: Item):
-    item.price = item.name + item.price
-    return item
+# @app.post("/items/")
+# async def create_item(item: Item):
+#     item_dict = item.dict()
+#     if item.tax:
+#         price_with_tax = item.price + item.tax
+#         item_dict.update({"price_with_tax": price_with_tax})
+#     return item_dict
 
 # # 必须的查询参数
 # @app.get("/items/{item_id}")
