@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80a256f0-7578-49a0-9fd2-b77f6319fcde" name="Changes" comment="post练习13:04">
+    <list default="true" id="80a256f0-7578-49a0-9fd2-b77f6319fcde" name="Changes" comment="路径参数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -85,7 +85,7 @@
       <workItem from="1727342063244" duration="21846000" />
       <workItem from="1728379537229" duration="4577000" />
       <workItem from="1728528225863" duration="3600000" />
-      <workItem from="1728533862878" duration="28885000" />
+      <workItem from="1728533862878" duration="60023000" />
     </task>
     <task id="LOCAL-00001" summary="整体更新">
       <option name="closed" value="true" />
@@ -175,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728632354489</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="路径参数">
+      <option name="closed" value="true" />
+      <created>1728713822659</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728713822659</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +203,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="整体更新" />
     <MESSAGE value="post练习13:04" />
-    <option name="LAST_COMMIT_MESSAGE" value="post练习13:04" />
+    <MESSAGE value="路径参数" />
+    <option name="LAST_COMMIT_MESSAGE" value="路径参数" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/fastApiProject$main.coverage" NAME="main Coverage Results" MODIFIED="1728703356870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
